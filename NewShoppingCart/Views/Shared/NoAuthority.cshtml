@@ -1,0 +1,39 @@
+﻿@model ErrorViewModel
+
+@{
+    var user = Context.User;
+}
+
+<style>
+    .bg {
+        background-image: url('/Images/lock.jpg');
+        height: 500px; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+    .error{
+        text-align: left;
+    }
+</style>
+
+<div class="bg">
+    <div class="content">
+        <div class="error">
+
+        <h1 class="text-danger">Error</h1>>
+            <br /><br />
+        <h1>Oops! You don't have permission.</h1>
+        <br /><br />
+        </div>
+    </div>
+</div>

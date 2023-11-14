@@ -1,0 +1,62 @@
+﻿@model IEnumerable<NewShoppingCart.Models.UserCartItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Cart</h1>*@
+<div>
+    <img src="~/lib/assets/images/grocery-cart.png" style="height:50px;width:50px" />
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+           @* <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+            
+        </tr>
+        }
+       
+    </tbody>
+    
+</table>
+<form asp-action="Confirm" method="post">
+   
+    <button type="submit" class="btn btn-primary">Confirm</button>
+    <a asp-action="Cancel" class="btn btn-danger">Cancel</a>
+</form>
